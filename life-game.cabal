@@ -27,6 +27,8 @@ library
   exposed-modules:
       LifeGame
       LifeGame.Cell
+      LifeGame.Field
+      LifeGame.Next
   other-modules:
       Paths_life_game
   hs-source-dirs:
