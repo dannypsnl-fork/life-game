@@ -61,6 +61,7 @@ test-suite life-game-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
+      LifeGame.NextSpec
       Paths_life_game
   hs-source-dirs:
       test
@@ -68,6 +69,7 @@ test-suite life-game-test
   build-depends:
       base >=4.7 && <5
     , hscurses >=1.4
+    , hspec
     , life-game
     , process >=1.6
     , random >=1.2
