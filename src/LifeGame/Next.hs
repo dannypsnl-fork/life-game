@@ -9,7 +9,11 @@ at :: Field -> Pos -> Cell
 Field field `at` (i, j) = field !! (i + 1) !! (j + 1)
 
 aliveCntAround :: Field -> Pos -> Int
-aliveCntAround field (i, j) = foldl (\s e -> if e == Alive then s + 1 else s) 0 $ map (field `at`) [(i -1, j -1), (i -1, j), (i -1, j + 1), (i, j -1), (i, j + 1), (i + 1, j -1), (i + 1, j), (i + 1, j + 1)]
+aliveCntAround field (i, j) =
+  foldl
+    (\s pos -> if (field `at` pos) == Alive then s + 1 else s)
+    0
+    [(i -1, j -1), (i -1, j), (i -1, j + 1), (i, j -1), (i, j + 1), (i + 1, j -1), (i + 1, j), (i + 1, j + 1)]
 
 nextCell :: Field -> Pos -> Cell
 nextCell field pos
